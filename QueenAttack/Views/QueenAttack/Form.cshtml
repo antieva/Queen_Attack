@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Queen Attack</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <div class = "container">
+      <h1>Can your Queen attack some other chess piece?</h1>
+      <form action='/queen' method = 'post'>
+        <h3>Queen Coordinates</h3>
+        <label class="control-label" for="queenRow">Row</label>
+        <select class="form-control short" name="queenRow">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <label class="control-label" for="queenCol">Column</label>
+        <select class="form-control short" name = "queenCol">
+          <option value="1">A</option>
+          <option value="2">B</option>
+          <option value="3">C</option>
+          <option value="4">D</option>
+          <option value="5">E</option>
+          <option value="6">F</option>
+          <option value="7">G</option>
+          <option value="8">H</option>
+        </select>
+        <h3>Piece Coordinates</h3>
+        <label class="control-label" for="pieceRow">Row</label>
+        <select class="form-control short" name = "pieceRow">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <label class="control-label" for="pieceCol">Column</label>
+        <select class="form-control short" name = "pieceCol">
+          <option value="1">A</option>
+          <option value="2">B</option>
+          <option value="3">C</option>
+          <option value="4">D</option>
+          <option value="5">E</option>
+          <option value="6">F</option>
+          <option value="7">G</option>
+          <option value="8">H</option>
+        </select>
+        <br>
+        <button type='submit' class='btn btn-primary'>Submit</button>
+      </form>
+
+      @if (Model == null) {
+        <hr>
+      } else if (Model){
+        <h2>Your Queen can attack that piece!</h2>
+      } else {
+        <h3>Sorry, that piece is out of reach.</h3>
+      }
+
+    </div>
+  </body>
+</html>
